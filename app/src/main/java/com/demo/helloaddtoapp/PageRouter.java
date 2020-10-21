@@ -22,6 +22,7 @@ public class PageRouter {
         put("first", "first");
         put("second", "second");
         put("mypage", "mypage");
+        put("myfish", "myfish");
         put("tab", "tab");
         put("sample://flutterPage", "flutterPage");
     }};
@@ -62,6 +63,7 @@ public class PageRouter {
             return false;
 
         } catch (Throwable t) {
+            Log.d("FlutterBoost", "找不到path:" + path);
             return false;
         }
     }

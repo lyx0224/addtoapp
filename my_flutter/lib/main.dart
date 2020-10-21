@@ -1,5 +1,7 @@
+import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:my_flutter/fishredux/page.dart';
 import 'package:my_flutter/home_page.dart';
 import 'package:my_flutter/my_page.dart';
 import 'simple_page_widgets.dart';
@@ -14,6 +16,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  //fish-redux page
+  final AbstractRoutes fishReduxRoutes = PageRoutes(
+      pages: <String, Page<Object, dynamic>>{'myfish': MyFishPage()});
+
   @override
   void initState() {
     super.initState();
@@ -47,6 +53,10 @@ class _MyAppState extends State<MyApp> {
 
         return FlutterRouteWidget(params: params);
       },
+      //fish-reudex路由交给flutterboost管理
+      'myfish': (String pageName, Map<String, dynamic> params, String _) {
+        return MyFishPage().buildPage(params);
+      }
     });
     FlutterBoost.singleton
         .addBoostNavigatorObserver(TestBoostNavigatorObserver());
@@ -60,6 +70,11 @@ class _MyAppState extends State<MyApp> {
         title: 'Flutter Boost example',
         builder: FlutterBoost.init(postPush: _onRoutePushed),
         routes: <String, WidgetBuilder>{'mypage': (context) => MyPage()},
+        onGenerateRoute: (RouteSettings settins) {
+          return MaterialPageRoute(builder: (context) {
+            return fishReduxRoutes.buildPage(settins.name, settins.arguments);
+          });
+        },
         home: MainPage());
   }
 

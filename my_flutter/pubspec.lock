@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3"
+  fish_redux:
+    dependency: "direct main"
+    description:
+      path: "../fish_redux"
+      relative: true
+    source: path
+    version: "0.3.4"
   flutter:
     dependency: "direct main"
     description: flutter

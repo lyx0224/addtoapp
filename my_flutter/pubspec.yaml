@@ -23,6 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
+  fish_redux:
+    path: ../fish_redux/
   
   flutter_boost:
     git:

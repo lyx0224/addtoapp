@@ -37,6 +37,26 @@ class MyPage extends StatelessWidget {
                 Navigator.of(context).pushNamed('mypage');
               },
               child: Text("navigator to my page"),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            RaisedButton(
+              color: Colors.yellowAccent,
+              onPressed: () {
+                Navigator.of(context).pushNamed('myfish');
+              },
+              child: Text('navigator to myfish fish-redux page'),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            RaisedButton(
+              color: Colors.yellow,
+              onPressed: () {
+                FlutterBoost.singleton.open('myfish').then(null);
+              },
+              child: Text('fb to myfish fish-redux page'),
             )
           ],
         ),
