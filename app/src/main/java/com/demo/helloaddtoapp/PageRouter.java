@@ -23,6 +23,7 @@ public class PageRouter {
         put("second", "second");
         put("mypage", "mypage");
         put("myfish", "myfish");
+        put("sliverdemo", "sliverdemo");
         put("tab", "tab");
         put("sample://flutterPage", "flutterPage");
     }};
