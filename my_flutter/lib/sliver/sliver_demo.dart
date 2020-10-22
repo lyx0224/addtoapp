@@ -5,9 +5,6 @@ class SliverDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('sliver demo2'),
-      ),
       body: Container(
         color: Colors.red[50],
         child: CustomScrollView(

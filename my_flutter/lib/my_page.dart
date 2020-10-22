@@ -57,6 +57,16 @@ class MyPage extends StatelessWidget {
                 FlutterBoost.singleton.open('myfish').then(null);
               },
               child: Text('fb to myfish fish-redux page'),
+            ),
+            RaisedButton(
+              color: Colors.red[100],
+              onPressed: () {
+                Navigator.of(context).pushNamed('sliverdemo');
+              },
+              onLongPress: () {
+                FlutterBoost.singleton.open('sliverdemo').then(null);
+              },
+              child: Text('sliver demo(长按fb打开)'),
             )
           ],
         ),
