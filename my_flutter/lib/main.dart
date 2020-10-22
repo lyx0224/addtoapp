@@ -4,6 +4,7 @@ import 'package:flutter_boost/flutter_boost.dart';
 import 'package:my_flutter/fishredux/page.dart';
 import 'package:my_flutter/home_page.dart';
 import 'package:my_flutter/my_page.dart';
+import 'package:my_flutter/sliver/sliver_demo.dart';
 import 'simple_page_widgets.dart';
 
 void main() {
@@ -46,6 +47,8 @@ class _MyAppState extends State<MyApp> {
               FragmentRouteWidget(params),
       'mypage': (String pageName, Map<String, dynamic> params, String _) =>
           MyPage(params: params),
+      'sliverdemo': (String pageName, Map<String, dynamic> params, String _) =>
+          SliverDemo(),
 
       ///可以在native层通过 getContainerParams 来传递参数
       'flutterPage': (String pageName, Map<String, dynamic> params, String _) {
@@ -69,7 +72,10 @@ class _MyAppState extends State<MyApp> {
         darkTheme: ThemeData.dark(),
         title: 'Flutter Boost example',
         builder: FlutterBoost.init(postPush: _onRoutePushed),
-        routes: <String, WidgetBuilder>{'mypage': (context) => MyPage()},
+        routes: <String, WidgetBuilder>{
+          'mypage': (context) => MyPage(),
+          'sliverdemo': (context) => SliverDemo()
+        },
         onGenerateRoute: (RouteSettings settins) {
           return MaterialPageRoute(builder: (context) {
             return fishReduxRoutes.buildPage(settins.name, settins.arguments);

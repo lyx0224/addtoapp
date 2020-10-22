@@ -33,6 +33,16 @@ class MainPage extends StatelessWidget {
             Text(
               "tips: not work in flutter module, but work well in host app",
               style: TextStyle(color: Colors.red),
+            ),
+            RaisedButton(
+              color: Colors.red[100],
+              onPressed: () {
+                Navigator.of(context).pushNamed('sliverdemo');
+              },
+              onLongPress: () {
+                FlutterBoost.singleton.open('sliverdemo').then(null);
+              },
+              child: Text('sliver demo(长按fb打开)'),
             )
           ],
         ),
