@@ -54,7 +54,8 @@ android {
 
 repositories {
     maven {
-        url '/Users/ethan/flutter-workspace/helloaddtoapp/my_flutter/build/host/outputs/repo'
+        //url '/Users/ethan/flutter-workspace/helloaddtoapp/my_flutter/build/host/outputs/repo'
+        url("file://" + project.rootDir.absolutePath + "/my_flutter/build/host/outputs/repo")
     }
     maven {
         url 'http://download.flutter.io'
