@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -33,6 +34,12 @@ class MainPage extends StatelessWidget {
             Text(
               "tips: not work in flutter module, but work well in host app",
               style: TextStyle(color: Colors.red),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Fluttertoast.showToast(msg: "you clicked me");
+              },
+              child: Text("toast"),
             )
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MyPage extends StatelessWidget {
   final Map<String, dynamic> params;
@@ -67,6 +68,13 @@ class MyPage extends StatelessWidget {
                 FlutterBoost.singleton.open('sliverdemo').then(null);
               },
               child: Text('sliver demo(长按fb打开)'),
+            ),
+            RaisedButton(
+              color: Colors.red[100],
+              onPressed: () {
+                Fluttertoast.showToast(msg: "你吃了我吧");
+              },
+              child: Text("吐司面包"),
             )
           ],
         ),
